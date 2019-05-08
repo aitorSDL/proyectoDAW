@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{restaurant.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-item text-wrap>
+      <ion-label> <strong>Name: </strong>
+        {{restaurant?.name}}
+      </ion-label>
+    </ion-item>
+
+    <ion-item text-wrap>
+      <ion-label> <strong>Cuisine: </strong>
+        {{restaurant?.cuisine}}
+      </ion-label>
+    </ion-item>
+
+    <ion-item text-wrap>
+      <ion-label> <strong>Address: </strong>
+        {{restaurant?.address}}
+      </ion-label>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label> <strong>Specialty: </strong>
+        {{restaurant?.specialty}}
+      </ion-label>
+    </ion-item>
+    <button ion-button color="green" round (click)="reservar()">Reservar</button>
+  </ion-card>
+</ion-content>
+

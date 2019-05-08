@@ -1,0 +1,86 @@
+page-login {
+
+  .scroll-content {
+    background-color: #28b270;
+    border-bottom: transparent;
+  }
+
+  .item {
+    background-color: #18b23e;
+    border-bottom: transparent;
+    border-radius: 15px;
+  }
+  .credentials {
+    margin-bottom: 15px;
+
+    .error_description {
+      margin: 5px 0 0;
+      position: absolute;
+      z-index: 5;
+      padding-left: 25px;
+      font-size: .85em;
+      visibility: hidden;
+    }
+
+    &.error {
+
+      &.email, &.password {
+        color: red !important;
+
+
+        .error_description {
+          color: red;
+          visibility: visible;
+        }
+
+        .item-inner {
+          border-bottom: 1px solid red !important;
+        }
+
+        ion-item ion-label {
+          color: red !important;
+        }
+      }
+    }
+  }
+
+  ion-grid {
+    margin-top: 4em;
+    min-width: 15rem;
+    max-width: 45rem;
+
+    ion-list {
+      padding-bottom: 10px !important;
+    }
+
+    button {
+      text-transform: none !important;
+    }
+
+    ion-item {
+      border: none !important;
+      box-shadow: none !important;
+
+      &.input-has-focus {
+
+        ion-label {
+          color: black !important;
+        }
+
+        .item-inner {
+          border-bottom: 1px solid black !important;
+        }
+      }
+
+      ion-label {
+        color: #999;
+      }
+
+      .item-inner {
+        border-bottom: 1px solid #dedede !important;
+        box-shadow: none !important;
+      }
+    }
+  }
+
+}

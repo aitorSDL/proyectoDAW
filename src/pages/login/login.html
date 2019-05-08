@@ -1,0 +1,62 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+
+        <div text-center>
+          <h4>El Cucharón</h4><br>
+          <img style="width:50px; height:50px" src="https://cdn1.iconfinder.com/data/icons/restaurant-kitchen-utensils/100/Kitchenware_8-512.png">
+        </div>
+
+        <ion-list inset>
+
+          <div class="credentials_email" [ngClass]="{'error' : email_error}">
+            <ion-item>
+              <ion-label floating>E-mail</ion-label>
+              <ion-input
+                type="text"
+                (keyup.enter)="login(user);"
+                [(ngModel)]="user.email"></ion-input>
+            </ion-item>
+            <ion-label class="error_description">{{email_error_msg}}</ion-label>
+          </div>
+
+          <div class="credentials_password" [ngClass]="{'error' : pass_error}">
+            <ion-item>
+              <ion-label floating>Password</ion-label>
+              <ion-input
+                type="password"
+                (keyup.enter)="login(user);"
+                [(ngModel)]="user.password"></ion-input>
+            </ion-item>
+            <ion-label class="error_description">{{pass_error_msg}}</ion-label>
+          </div>
+
+        </ion-list>
+
+        <div padding>
+          <button
+            ion-button
+            small
+            block
+            color="dark"
+            (click)="login(user)">
+            Login
+          </button>
+        </div>
+
+        <div padding>
+          <button
+            ion-button
+            small
+            block
+            color="dark"
+            (click)="signup()">
+            Sign up
+          </button>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,77 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+
+        <div text-center>
+          <h4>Become a member</h4>
+        </div>
+
+        <ion-list>
+
+          <div class="name">
+            <ion-item>
+              <ion-label floating >Name</ion-label>
+              <ion-input
+                type="text"
+                (keyup.enter)="signUp(user);"
+                [(ngModel)]="user.name"></ion-input>
+            </ion-item>
+            <ion-label class="error_description">{{email_error_msg}}</ion-label>
+          </div>
+
+          <div class="credentials email" [ngClass]="{'error' : email_error}">
+            <ion-item>
+              <ion-label floating >E-mail</ion-label>
+              <ion-input
+                type="text"
+                (keyup.enter)="signUp(user);"
+                [(ngModel)]="user.email"></ion-input>
+            </ion-item>
+            <ion-label class="error_description">{{email_error_msg}}</ion-label>
+          </div>
+
+          <div class="credentials password" [ngClass]="{'error' : pass_error}">
+            <ion-item>
+              <ion-label floating>Password</ion-label>
+              <ion-input
+                type="password"
+                (keyup.enter)="signUp(user);"
+                [(ngModel)]="user.password"></ion-input>
+            </ion-item>
+            <ion-label class="error_description">{{pass_error_msg}}</ion-label>
+          </div>
+
+          <div class="credentials cPassword" [ngClass]="{'error' : cPass_error}">
+            <ion-item>
+              <ion-label floating>Confirm password</ion-label>
+              <ion-input
+                type="password"
+                (keyup.enter)="signUp(user);"
+                [(ngModel)]="user.cPassword"></ion-input>
+            </ion-item>
+            <ion-label class="error_description">{{cPass_error_msg}}</ion-label>
+          </div>
+        </ion-list>
+
+        <div padding>
+          <button
+            ion-button
+            small
+            block
+            color="dark"
+            (click)="signUp(user)">
+            Sign up
+          </button>
+        </div>
+        <div padding>
+          <p float-right="">Have an account? <a
+            (click)="backToLogin()">
+            Log in</a>
+          </p>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

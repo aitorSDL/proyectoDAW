@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <div *ngFor="let row of restaurants">
+      <ion-row>
+        <ion-col *ngFor="let column of row" col-6>
+          <ion-card (click)="itemTapped(column)">
+            <ion-card-header>
+              <ion-card-title class="product-name">{{column.name}}</ion-card-title>
+              <ion-card-title class="product-cuisine" small>{{column.cuisine}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p class="product-price"><strong>{{column.specialty}}</strong></p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>
