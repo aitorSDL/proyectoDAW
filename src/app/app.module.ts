@@ -27,6 +27,7 @@ import {ManageProfilePage} from "../pages/manage-profile/manage-profile";
 import {ManageUsersPage} from "../pages/manage-users/manage-users";
 import {NewRestaurantPage} from "../pages/new-restaurant/new-restaurant";
 import {EditRestaurantPage} from "../pages/edit-restaurant/edit-restaurant";
+import { DateTimeComponent } from "../components/date-time/date-time";
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {EditRestaurantPage} from "../pages/edit-restaurant/edit-restaurant";
     ManageProfilePage,
     ManageUsersPage,
     NewRestaurantPage,
-    EditRestaurantPage
+    EditRestaurantPage,
+    DateTimeComponent
   ],
   imports: [
     BrowserModule,

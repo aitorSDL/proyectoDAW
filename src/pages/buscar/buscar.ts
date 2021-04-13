@@ -3,6 +3,7 @@ import {LoadingController, NavController} from 'ionic-angular';
 import {DbApiService} from "../../shared/db-api.service";
 import {RestaurantPage} from "../restaurant/restaurant";
 import * as _ from 'lodash';
+import {DateTimeComponent} from "../../components/date-time/date-time";
 
 @Component({
   selector: 'page-home',

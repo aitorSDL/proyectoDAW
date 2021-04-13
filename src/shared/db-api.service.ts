@@ -12,25 +12,9 @@ export class DbApiService {
 
   }
 
-  // getStock(): Observable<any> {
-  //   return this.fdb.list('/products/').valueChanges();
-  // }
-
-
   deleteItem(product) {
     return this.fdb.list(`/restaurants/${product.id}`).remove();
   }
-
-  // getProductByCategory(category):Observable<any>{
-  //   return this.fdb.object(`/products/${category}`).valueChanges()
-  // }
-  //
-  // getCategories(): Observable<any>{
-  //   return this.fdb.list('/categoria').valueChanges();
-  // }
-  // getCategoryData(categorytId):Observable<any> {
-  //   return this.fdb.object(`/categoria/${categorytId}`).valueChanges()
-  // }
 
   uploadItem(name: any, cuisine: any, address: any, specialty: any) {
     let key = firebase.database().ref().child('restaurants').push().key;
@@ -138,5 +122,32 @@ export class DbApiService {
       .equalTo(firebase.auth().currentUser.uid)
       .once('value')
       .then((snapshot) => { return snapshot.val()});
+  }
+
+  getUserReservations() {
+    return firebase.database()
+      .ref('reservas')
+      .orderByChild('user')
+      .equalTo(firebase.auth().currentUser.uid)
+      .once('value')
+      .then((snapshot) => { return snapshot.val()});
+  }
+
+  makeReservation(restaurant: any, date: any) {
+    let key = firebase.database().ref().child('reservas').push().key;
+    firebase
+      .database()
+      .ref()
+      .child('reservas')
+      .child(key)
+      .set({
+        restaurant: restaurant,
+        date: date,
+        user: firebase.auth().currentUser.uid
+      });
+  }
+
+  removeReserv(reservationId: any): Promise<any> {
+    return this.fdb.list(`/reservas/${reservationId}`).remove();
   }
 }

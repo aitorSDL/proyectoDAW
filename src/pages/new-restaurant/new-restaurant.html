@@ -5,46 +5,37 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>new-restaurant</ion-title>
+  <ion-navbar color="secondary">
+    <ion-title>New restaurant</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <form [formGroup]="productForm" (ngSubmit)="saveData()">
     <ion-list>
-      <ion-item>
+      <ion-item color="light">
         <ion-icon name="logo-apple" item-start></ion-icon>
         <ion-label stacked>Name:</ion-label>
         <ion-input formControlName="name" type="text" value="{{item.name}}"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item color="title">
         <ion-icon name="clipboard" item-start></ion-icon>
         <ion-label stacked>Cuisine:</ion-label>
         <ion-input formControlName="cuisine" type="text" value="{{item.cuisine}}"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item color="light">
         <ion-icon name="logo-reddit" item-start></ion-icon>
         <ion-label stacked>Address:</ion-label>
         <ion-input formControlName="address" type="text" value="{{item.address}}"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item color="title">
         <ion-icon name="logo-reddit" item-start></ion-icon>
         <ion-label stacked>Specialty:</ion-label>
         <ion-input formControlName="specialty" type="text" value="{{item.specialty}}"></ion-input>
       </ion-item>
-      <!--<ion-item>-->
-        <!--<ion-icon name="logo-reddit" item-start></ion-icon>-->
-        <!--<ion-label stacked>Specialty:</ion-label>-->
-        <!--<ion-select formControlName="specialty" [(ngModel)]=item.specialty  multiple="true">-->
-          <!--<ion-option *ngFor="let cat of categories">-->
-            <!--{{cat?.name}}-->
-          <!--</ion-option>-->
-        <!--</ion-select>-->
-      <!--</ion-item>-->
     </ion-list>
     <div padding>
-      <button ion-button block type="submit" [disabled]="!productForm.valid" (click)="backToManage()">Guardar</button>
+      <button color="secondary" ion-button block type="submit" [disabled]="!productForm.valid" (click)="backToManage()">Guardar</button>
     </div>
   </form>
 </ion-content>

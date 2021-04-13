@@ -10,7 +10,9 @@ import {AuthProvider} from "../../providers/auth/auth";
 import {LoginPage} from "../login/login";
 
 @Component({
-  templateUrl: 'tabs.html'
+  templateUrl: 'tabs.html',
+  styles: ["tabs"]
+
 })
 export class TabsPage {
 
@@ -28,13 +30,17 @@ export class TabsPage {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad TabsPage');
-    this.user = AuthProvider.currentUser;
+
     AuthProvider.userLogged.subscribe({next: status => {
         console.log('el usuario ha cambiado de estado, ahora está ', status);
         this.userLogged = status;
       }});
-    if (this.user.admin){
-      this.isAdmin = true;
+    if (this.userLogged){
+      this.user = AuthProvider.currentUser;
+      if (this.user.admin){
+        this.isAdmin = true;
+      }
     }
+    console.log("Es admin:", this.isAdmin);
   }
 }

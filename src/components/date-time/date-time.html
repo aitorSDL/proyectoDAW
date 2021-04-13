@@ -1,0 +1,7 @@
+<!-- Generated template for the DateTimeComponent component -->
+<div [ngClass]="{'hideScroll' : hide}">
+  <ion-item color="title" *ngIf="alreadyReserved == false">
+    <ion-label class="reservar">Reservar</ion-label>
+    <ion-datetime pickerFormat="DD HH:mm" minuteValues="0,15,30,45" (ionChange)="reservar($event)"></ion-datetime>
+  </ion-item>
+</div>

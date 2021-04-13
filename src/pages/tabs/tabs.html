@@ -1,7 +1,7 @@
-<ion-tabs>
+<ion-tabs color="primary">
   <ion-tab [root]="searchTab" tabTitle="Search" tabIcon="search"></ion-tab>
   <ion-tab [show]="userLogged" [root]="reservasTab" tabTitle="Reservas" tabIcon="restaurant"></ion-tab>
-  <ion-tab [show]="!isAdmin" [root]="manage" tabTitle="Mis restaurantes" tabIcon="settings"></ion-tab>
+  <ion-tab *ngIf="isAdmin == false && userLogged == true" [root]="manage" tabTitle="Mis restaurantes" tabIcon="settings"></ion-tab>
   <ion-tab [show]="isAdmin" [root]="adminRoot" tabTitle="Gestionar" tabIcon="build"></ion-tab>
   <ion-tab [show]="!userLogged" [root]="loginTab"   tabIcon="person"          ></ion-tab>
   <ion-tab [show]="userLogged" [root]="configTab" tabTitle="Configuración" tabIcon="cog" ></ion-tab>

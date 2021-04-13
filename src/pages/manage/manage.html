@@ -5,16 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>manage</ion-title>
+  <ion-navbar color="secondary">
+    <ion-title>Manage</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list no-lines>
     <div *ngFor="let item of user_stock">
-      <ion-item>
-        <button ion-item (click)="restaurantDetail(item)">
+      <ion-item color="title">
+        <button color="light" ion-item (click)="restaurantDetail(item)">
           {{item?.name}}
         </button>
         <button ion-button color="dark" clear icon-only (click)="editItem(item)" item-end>

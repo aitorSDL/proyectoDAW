@@ -5,28 +5,30 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>manage-restaurants</ion-title>
+  <ion-navbar color="secondary">
+    <ion-title>Manage restaurants</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content color="primary" padding>
   <ion-list inset>
-    <button (click)="uploadItem()" outline >
+    <button color="title" ion-button (click)="uploadItem()" outline >
       <ion-icon name="add-circle" color="success" outline></ion-icon>
     </button>
     <div *ngFor="let item of stock_data" ion-item="">
       <ion-row>
-      <button ion-button class="restaurant"
+        <ion-item color="title">
+      <button color="primary" ion-button class="restaurant"
         (click)="itemTappedAdmin(item)"
       >{{item?.name}}
       </button>
-      <button ion-button (click)="editItem(item)" outline >
+      <button color="light" ion-button (click)="editItem(item)" outline >
         <ion-icon name="create" color="success"></ion-icon>
       </button >
       <button ion-button (click)="itemDelete(item)" outline >
         <ion-icon name="trash" color="danger" outline></ion-icon>
       </button>
+        </ion-item>
       </ion-row>
     </div>
   </ion-list>
